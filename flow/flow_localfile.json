@@ -1,0 +1,8 @@
+{
+    "nwk_type": "ttn",
+    "protocol": "manual",
+    "client_id": "localfile",
+    "influx_bucket": "iot-networks-dev",
+    "influx_meas": "uploaded"
+}
+            

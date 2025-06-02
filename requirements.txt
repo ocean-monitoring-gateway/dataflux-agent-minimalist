@@ -1,0 +1,6 @@
+influxdb_client==1.30.0
+pandas==2.2.0
+numpy==1.26.4
+paho_mqtt==1.6.1
+pycayennelpp==2.4.0
+requests==2.31.0

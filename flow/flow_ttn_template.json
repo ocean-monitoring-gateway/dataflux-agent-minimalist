@@ -1,0 +1,14 @@
+{
+    "nwk_type": "ttn",
+    "protocol": "mqtt",
+    "client_id": "myttnappname",
+    "influx_bucket": "mybucket",
+    "influx_meas": "received",
+    "server": "eu1.cloud.thethings.network",
+    "port": 1883,
+    "username": "myttnappname@ttn",
+    "apikey": "MYAPIKEY",
+    "topic": "v3/myttnappname@ttn/devices/+/up",
+    "use_tls": false
+}
+            

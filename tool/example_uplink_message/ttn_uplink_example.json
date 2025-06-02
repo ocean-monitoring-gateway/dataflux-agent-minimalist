@@ -1,0 +1,120 @@
+{
+    "name": "as.up.data.forward",
+    "time": "2022-07-08T11:22:31.332853443Z",
+    "identifiers": [
+        {
+            "device_ids": {
+                "device_id": "eui-3834343054378516",
+                "application_ids": {
+                    "application_id": "doi-test-app"
+                },
+                "dev_eui": "3834343054378516",
+                "join_eui": "0000000000000000",
+                "dev_addr": "260B55BF"
+            }
+        }
+    ],
+    "data": {
+        "@type": "type.googleapis.com/ttn.lorawan.v3.ApplicationUp",
+        "end_device_ids": {
+            "device_id": "eui-3834343054378516",
+            "application_ids": {
+                "application_id": "doi-test-app"
+            },
+            "dev_eui": "3834343054378516",
+            "join_eui": "0000000000000000",
+            "dev_addr": "260B55BF"
+        },
+        "correlation_ids": [
+            "as:up:01G7ERR2GY3VXB32YZ0GR11SEK",
+            "gs:conn:01G7E6GHEWJR64HGWTHBJNEMFE",
+            "gs:up:host:01G7E6GHF0CF5S9MQ3BAY5CTG8",
+            "gs:uplink:01G7ERR2AEKT6X2Q32VWM19WT2",
+            "ns:uplink:01G7ERR2AFDB93MYBBB1TQV7Y1",
+            "rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01G7ERR2AF8ATM9AYDV9FE437X",
+            "rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01G7ERR2GXRX185EYVP4X2AK81"
+        ],
+        "received_at": "2022-07-08T11:22:31.326432438Z",
+        "uplink_message": {
+            "session_key_id": "AYHcA2g1nlVWctWC+RA9Vg==",
+            "f_port": 128,
+            "f_cnt": 2572,
+            "frm_payload": "AIj88sAIZHAAAAA=",
+            "decoded_payload": {
+                "gps_0": {
+                    "altitude": 0,
+                    "latitude": -20,
+                    "longitude": 55
+                }
+            },
+            "rx_metadata": [
+                {
+                    "gateway_ids": {
+                        "gateway_id": "ifremer-doi-gateway",
+                        "eui": "AC1F09FFFE064CA5"
+                    },
+                    "time": "2022-07-08T11:22:29.992Z",
+                    "timestamp": 1154533884,
+                    "rssi": -112,
+                    "channel_rssi": -112,
+                    "snr": -6,
+                    "frequency_offset": "-129",
+                    "location": {
+                        "latitude": -20.93295,
+                        "longitude": 55.29024,
+                        "altitude": 8,
+                        "source": "SOURCE_REGISTRY"
+                    },
+                    "uplink_token": "CiEKHwoTaWZyZW1lci1kb2ktZ2F0ZXdheRIIrB8J//4GTKUQ/JPDpgQaCwj3pqCWBhCrv804IOCA1PzMkgUqDAj1pqCWBhCA8ILZAw==",
+                    "channel_index": 4
+                }
+            ],
+            "settings": {
+                "data_rate": {
+                    "lora": {
+                        "bandwidth": 125000,
+                        "spreading_factor": 8
+                    }
+                },
+                "coding_rate": "4/5",
+                "frequency": "867300000",
+                "timestamp": 1154533884,
+                "time": "2022-07-08T11:22:29.992Z"
+            },
+            "received_at": "2022-07-08T11:22:31.119493631Z",
+            "consumed_airtime": "0.113152s",
+            "locations": {
+                "frm-payload": {
+                    "latitude": -20,
+                    "longitude": 55,
+                    "source": "SOURCE_GPS"
+                }
+            },
+            "network_ids": {
+                "net_id": "000013",
+                "tenant_id": "ttn",
+                "cluster_id": "eu1",
+                "cluster_address": "eu1.cloud.thethings.network"
+            }
+        }
+    },
+    "correlation_ids": [
+        "as:up:01G7ERR2GY3VXB32YZ0GR11SEK",
+        "gs:conn:01G7E6GHEWJR64HGWTHBJNEMFE",
+        "gs:up:host:01G7E6GHF0CF5S9MQ3BAY5CTG8",
+        "gs:uplink:01G7ERR2AEKT6X2Q32VWM19WT2",
+        "ns:uplink:01G7ERR2AFDB93MYBBB1TQV7Y1",
+        "rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01G7ERR2AF8ATM9AYDV9FE437X",
+        "rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01G7ERR2GXRX185EYVP4X2AK81"
+    ],
+    "origin": "ip-10-100-13-1.eu-west-1.compute.internal",
+    "context": {
+        "tenant-id": "CgN0dG4="
+    },
+    "visibility": {
+        "rights": [
+            "RIGHT_APPLICATION_TRAFFIC_READ"
+        ]
+    },
+    "unique_id": "01G7ERR2H49MRNZTNRAR42HEZ7"
+}

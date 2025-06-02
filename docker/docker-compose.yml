@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+
+  flow_ttn_template:
+    build:
+      context: ./../
+      dockerfile: ./docker/flow_ttn_template/Dockerfile
+    restart: always

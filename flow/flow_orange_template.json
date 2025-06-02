@@ -1,0 +1,14 @@
+{
+    "nwk_type": "orange",
+    "protocol": "mqtt",
+    "client_id": "myfifoname",
+    "influx_bucket": "mybucket",
+    "influx_meas": "received",
+    "server": "liveobjects.orange-business.com",
+    "port": 8883,
+    "username": "application",
+    "apikey": "MYAPIKEY",
+    "topic": "fifo/myfifoname",
+    "use_tls": true
+}
+            

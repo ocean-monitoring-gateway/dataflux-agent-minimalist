@@ -1,0 +1,4 @@
+fport,bucket,measurement,decoder,comments
+1,iot-dummy-devices,iot-dummy,payload_decoder_generic, dummy data
+12,turtle-dummy-devices,turtle-dummy,payload_decoder_cayennelpp, dummy data
+130,lora-dummy-devices,lora-dummy,payload_decoder_cayennelpp, dummy data
