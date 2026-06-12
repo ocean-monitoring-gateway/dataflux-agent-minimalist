@@ -1,4 +1,4 @@
 fport,bucket,measurement,decoder,comments
-1,iot-dummy-devices,iot-dummy,payload_decoder_generic, dummy data
-12,turtle-dummy-devices,turtle-dummy,payload_decoder_cayennelpp, dummy data
-130,lora-dummy-devices,lora-dummy,payload_decoder_cayennelpp, dummy data
+1,generic-dummy-devices,iot-dummy,payload_decoder_generic, dummy data no decoding
+2,cayenne-dummy-devices,lora-dummy,payload_decoder_cayennelpp, dummy data cayenne lpp decoding
+12,my-bucket,turtle-tag,payload_decoder_turtle_tag,official turtle tags

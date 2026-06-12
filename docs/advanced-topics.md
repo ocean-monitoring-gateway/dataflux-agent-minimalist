@@ -78,7 +78,7 @@ The *MainApp()* instance starts two parallel threads:
 
 The Figure below illustrates the *dataflux* architecture for a case where we connect a MQTT integration on a LoRa server to an Influxdb database (i.e. TTN or Orange).
 
-![dataflux_archi_1](home.assets/dataflux_archi_1.png)
+![dataflux_archi_1](dataflux_archi_1.png)
 
 *Figure. Diagram of dataflux architecture*
 
@@ -127,7 +127,7 @@ The Figure and code-like texts that follow illustrate the process thread operati
 | **decoder_manager** is from custom class *PayloadDecoder()* in lib_decoder.py        |
 | **influxdb_manager** is from custom class *InfluxdbManager()* in lib_influxdb.py     |
 
-![diagram_process_thread](home.assets/diagram_process_thread.png)
+![diagram_process_thread](diagram_process_thread.png)
 
 *Figure. Diagram of MainApp process thread*
 

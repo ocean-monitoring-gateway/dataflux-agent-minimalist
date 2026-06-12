@@ -305,62 +305,6 @@ def payload_decoder_turtle_tag(hexstr):
     return payload
 
 #############################################
-# turtle code GPS V2 (Octobre 2024)
-# Galatea version with GPS, timestamp and reduced payload
-#############################################
-def payload_decoder_turtle_tag_v2(hexstr):
-    print('Running payload decoder (turtle code GPS V2) ...')
-    bytes_struct = {0:{'key':'diveId', 'nbbyte':2, 'type':'<H'},
-                    1:{'key':'tdive_s', 'nbbyte':2, 'type':'<H'},
-                    2:{'key':'gnssEpochTime', 'nbbyte':4, 'type':'<i'},
-                    3:{'key':'latitude', 'nbbyte':4, 'type':'<i'},
-                    4:{'key':'longitude', 'nbbyte':4, 'type':'<i'},
-                    5:{'key':'ehpe', 'nbbyte':4, 'type':'<I'},
-                    6:{'key':'ttf', 'nbbyte':2, 'type':'<H'},
-                    7:{'key':'surfaceTime_s', 'nbbyte':2, 'type':'<H'},
-                    8:{'key':'surfaceSensorUseTime', 'nbbyte':4, 'type':'<I'},
-                    9:{'key':'gnssUseTime', 'nbbyte':2, 'type':'<H'},
-                    10:{'key':'gnssNoFixCount', 'nbbyte':1, 'type':'<B'},
-                    11:{'key':'gnssZeroSatTimeout', 'nbbyte':1, 'type':'<B'},
-                    12:{'key':'dive_profile', 'nbbyte':20, 'type':'s'},
-                    13:{'key':'temperature', 'nbbyte':2, 'type':'<H'},
-                    14:{'key':'battery_mv', 'nbbyte':2, 'type':'<H'}, # previously: battLevel_mV
-                    }
-    payload = dict() 
-    ## Decode payload according to data structure.
-    ## Save field names and values in dict
-    payload = parse_unpack_hexstring(hexstr,bytes_struct)
-    
-    payload['latitude'] = float(payload['latitude']/1e7)
-    payload['longitude'] = float(payload['longitude']/1e7)
-    payload['ehpe'] = float(payload['ehpe']/1e3)
-    payload['temperature'] = float(payload['temperature']/1e2)
-    epoch_time = payload['gnssEpochTime']
-    start_date = datetime(2020, 1, 1)
-    resulting_datetime = start_date + timedelta(seconds=epoch_time)
-    resulting_datetime_str = resulting_datetime.strftime('%Y-%m-%d %H:%M:%S')
-    payload['timestamp'] = resulting_datetime_str
-    
-    tab_size = 20
-    cell_size = 2
-    x = payload['dive_profile']
-    data = list()
-    # convert hex str in list of int16
-    for i in range(0,tab_size):
-        data.append(int(swapbytesHexstr(x[cell_size*i:cell_size*i+cell_size]),16))
-    # serialize to chain with "process_dive_profiles()"
-    payload['dive_profile'] = str(data).replace(',', '')
-
-    ## Process true dive profile
-    dftmp = pd.DataFrame(payload,index=[0])
-    dftmp = process_dive_profiles(dftmp)
-    payload = dftmp.to_dict('records')[0]
-    
-    
-    return payload
-
-
-#############################################
 ### Low-level function to convert hexadecimal string to decimal value
 #############################################
 def hex2dec(payload_string):

@@ -1,12 +1,18 @@
-# Dataflux
+![logo](./docs/dataflux_logo_1.png)
 
-> Python scripts and libraries to continuously read, process and store new data coming from various LoRa servers
+Python scripts and libraries to continuously read, process and store new data coming from various LoRa servers into an InfluxDB V2 database.
 
-[TOC]
+Table of Content
+- [Overview](#overview)
+- [Environment installation](#environment-installation)
+- [Starting a new flow](#starting-a-new-flow)
+  - [Step 1: Adding fport routing information](#step-1-adding-fport-routing-information)
+  - [Step 2: Flow configuration](#step-2-flow-configuration)
+  - [Step 3: Run the script](#step-3-run-the-script)
+- [Injecting data manually](#injecting-data-manually)
 
-**Related Documentation**
 
-See subfolder *dataflux-agent.wiki*
+*Ifremer / LIRMM (CNRS, University of Montpellier)*
 
 ---
 
@@ -19,12 +25,13 @@ Those instances are run in parallel and their number depends on how many data so
 **List of currently supported server:**
 
 - TTN over MQTT protocol
-
 - Orange over MQTT protocol 
-
 - Chirpstack over MQTT protocol
-
 - Local files (script compatible with generic csv files and with data directly downloaded as .csv or .json on the TTN and Orange web interface)
+
+**Related Documentation**
+
+- [Advanced Topics](./docs/advanced-topics.md)
 
 ## Environment installation
 
@@ -61,9 +68,6 @@ Start a proper Python environment with required packages installed and follow th
     - Comments about this new route
 - Open the file `lib/lib_decoder.py`
 - In the section  *“define custom decoder functions”*, add the definition of your decoder function so it decodes correctly your device payload
-
-
-
 
 ### Step 2: Flow configuration
 
@@ -142,5 +146,3 @@ Run the command below with path to your *flow* and *input* files
 python injectdata.py --flow flow_localfile.json --input path/to/mydata.csv
 ```
 
----
-Ifremer / CNRS

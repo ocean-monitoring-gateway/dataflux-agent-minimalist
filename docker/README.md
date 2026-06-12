@@ -1,6 +1,4 @@
-# Running Python program in docker
-
-(TO BE UPDATED...)
+# Running Dataflux in a docker
 
 **To run one or several script inside a docker:**
 
