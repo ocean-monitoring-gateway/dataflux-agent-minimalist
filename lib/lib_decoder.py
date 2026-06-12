@@ -172,40 +172,6 @@ def payload_decoder_cayennelpp(hexstr):
         else:
             payload[ref_key[field['type']]['name']+suffix] = field['value'][0]
     return payload
-# def payload_decoder_cayennelpp(hexstr):
-#     print('Running payload decoder (cayenne lpp) ...')
-#     payload = dict()
-#     # build cayenne lpp frame from hexstr
-#     frame = LppFrame().from_bytes(bytearray.fromhex(hexstr))
-#     print(frame)
-#     # dump frame in json format into payload variable
-#     frame = json.dumps(frame, default=LppUtil.json_encode_type_int)
-#     frame = json.loads(frame)
-#     print(frame)
-#     # convert back to dict
-#     ref_key = { 0:{'name':'digital_input','count':0},
-#                 1:{'name':'digital_output','count':0},
-#                 2:{'name':'analog_input','count':0},
-#                 3:{'name':'analog_output','count':0},
-#                 101:{'name':'lum_sensor','count':0},
-#                 102:{'name':'pres_sensor','count':0},
-#                 103:{'name':'temp_sensor','count':0},
-#                 104:{'name':<<<<'humid_sensor','count':0},
-#                 113:{'name':['acc_x','acc_y','acc_z'],'count':0},
-#                 115:{'name':'baro_sensor','count':0},
-#                 134:{'name':['gyro_x','gyro_y','gyro_z'],'count':0},
-#                 136:{'name':['gps_lat','gps_lng','gps_alt'],'count':0},
-#                }
-#     for field in frame:
-#         ref_key[field['type']]['count'] = ref_key[field['type']]['count'] +1
-#         suffix = '_' + '{:02d}'.format(ref_key[field['type']]['count'])
-#         if (field['type']==113) or (field['type']==134) or (field['type']==136): # Correspond to GPS data (divided in 3, lat/lng/alt)
-#             payload[ref_key[field['type']]['name'][0]+suffix] = field['value'][0]
-#             payload[ref_key[field['type']]['name'][1]+suffix] = field['value'][1]
-#             payload[ref_key[field['type']]['name'][2]+suffix] = field['value'][2]
-#         else:
-#             payload[ref_key[field['type']]['name']+suffix] = field['value'][0]
-#     return payload
 
 
 #############################################
